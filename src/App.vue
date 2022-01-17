@@ -4,8 +4,24 @@
     <router-link to="/about">About</router-link>
   </div>
   <router-view/> -->
-  <div></div>
+  <div class="container">
+    <Columnar/>
+    <Footer/>
+
+  </div>
 </template>
+
+<script>
+import Footer from './components/Footer.vue'
+import Columnar from './views/Columnar.vue'
+
+export default {
+  components: {
+    Columnar,
+    Footer
+  },
+}
+</script>
 
 <style>
 #app {
