@@ -14,10 +14,20 @@
 <script>
 import Footer from './components/Footer.vue'
 import Columnar from './views/Columnar.vue'
+import Monoalphabetic from './views/Monoalphabetic.vue'
+import Polyalphabetic from './views/Polyalphabetic.vue'
+import RSA from './views/RSA.vue'
+import Vernam from './views/Vernam.vue'
+import Vigenere from './views/Vigenere.vue'
 
 export default {
   components: {
     Columnar,
+    Monoalphabetic,
+    Polyalphabetic,
+    RSA,
+    Vernam,
+    Vigenere,
     Footer
   },
 }
