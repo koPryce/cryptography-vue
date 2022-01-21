@@ -1,5 +1,5 @@
 <template>
-    <button>{{label}}</button>    
+    <button v-on="$attrs">{{label}}</button>    
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {
     name: 'Button',
     props: {
         label:String,
-    }
+    },
 }
 </script>
 
@@ -18,7 +18,13 @@ button{
     border: 1px solid black;
     text-transform: uppercase;
     font-size:23px;
-    padding:8px;
+    padding:.5em;
+    margin: 1em;
+}
+
+button:hover{
+    cursor: pointer;
+    border: 3px red solid;
 }
 
 </style>
