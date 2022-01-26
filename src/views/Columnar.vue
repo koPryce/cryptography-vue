@@ -51,6 +51,7 @@ export default {
             this.ans = "";  
         },
         encryptText(){
+            this.cipherText = "";
             var row, col, textPos = 0;
             col = this.key.length;
             row = Math.ceil(this.plainText.length/col);
@@ -112,6 +113,7 @@ export default {
             this.ans = this.cipherText; 
         },
         decryptText(){
+            this.plainText = "";
             var row, col, textPos = 0;
             col = this.key.length;
             row =  Math.ceil(this.cipherText.length/col);
@@ -154,13 +156,20 @@ export default {
                             min_idx = j;
                         }
                 }
-                
-                this.key = this.key.replace(/this.key.charAt(min_idx)/gi, this.key.charAt(min_idx).toLowerCase());
 
-                // var temp = new Array(this.key.length);
-                // temp = Array.from(this.key);
-                // temp[min_idx] = temp[min_idx].toLowerCase();
-                // this.key = temp.toString();
+                const tempArray = this.key.split("");
+                let key = this.key.charAt(min_idx);
+                const newTempArray = tempArray.map(function(letter){
+                    if(letter === key){
+                        return letter = letter.toLowerCase();
+                    }
+                    return letter;
+                });
+
+                this.key = "";
+                for(let i of newTempArray) {
+                    this.key += i;
+                }
                 
                 if(excess[min_idx]) {
                     for(let k = 1; k < row; k++) {
@@ -182,6 +191,9 @@ export default {
             }
             for(let i = 1; i < row; i++) {
                 for(let j = 0; j < col; j++) {
+                    if(grid[i][j] == null){
+                        break;
+                    }
                     this.plainText += grid[i][j];
                 }
             }
