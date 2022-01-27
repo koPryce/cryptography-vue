@@ -17,7 +17,7 @@
 
     <!-- <Button label="<-Back"/> -->
 
-    <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans"></textarea>
+    <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
 
     <Button @click="performAction" label="Go"/>
 

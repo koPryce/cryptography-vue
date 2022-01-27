@@ -3,29 +3,27 @@
 
     <h3>Encrypt/Decrypt</h3>
 
-    <input type="radio" name="etype" id="encrypt">
+    <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
     <label for="encrypt">Encrypt</label>
 
-    <input type="radio" name="etype" id="decrypt">
+    <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
     <label for="decrypt">Decrypt</label>
 
     <label for="text">Plaintext/Ciphertext</label>
-    <input type="text" name="text" id="text">
+    <input type="text" name="text" id="text" v-model.trim="text">
 
     <h3>Type of Key</h3>
 
-    <input type="radio" name="ktype" id="numeric">
+    <input type="radio" name="ktype" id="numeric" value="numeric" v-model="ktype">
     <label for="numeric">Numeric</label>
 
-    <input type="radio" name="ktype" id="alphabetic">
+    <input type="radio" name="ktype" id="alphabetic" value="alphabetic" v-model="ktype">
     <label for="alphabetic">Alphabetic</label>
 
     <label for="key">Key (if numeric, enter with spaces)</label>
-    <input type="text" name="key" id="key">
+    <input type="text" name="key" id="key" v-model="key">
 
-    <Button label="<-Back"/>
-
-    <textarea name="answer" id="answer" cols="30" rows="10"></textarea>
+    <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
 
     <Button label="Go"/>
 

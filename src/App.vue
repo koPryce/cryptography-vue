@@ -5,7 +5,7 @@
   </div>
   <router-view/> -->
   <div class="container">
-    <Columnar/>
+    <RSA/>
     <Footer/>
 
   </div>
