@@ -1,5 +1,5 @@
 <template>
-    <button v-on="$attrs">{{label}}</button>    
+    <button v-on="$attrs" :style="{background:color}">{{label}}</button>    
 </template>
 
 <script>
@@ -7,13 +7,13 @@ export default {
     name: 'Button',
     props: {
         label:String,
+        color:String,
     },
 }
 </script>
 
 <style scoped>
 button{
-    color: white;
     background-color: black;
     border: 1px solid black;
     text-transform: uppercase;

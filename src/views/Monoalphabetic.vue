@@ -13,13 +13,13 @@
     <input type="text" name="text" id="text" v-model.trim="text">
 
     <label for="key">Key/mu</label>
-    <input type="text" name="key" id="key">
+    <input type="number" name="key" id="key" v-model="key">
 
     <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
 
-    <Button label="Go"/>
+    <Button @click="performAction" color="green" label="Go"/>
 
-    <Button label="Redo"/>    
+    <Button @click="clearContent" color="red" label="Redo"/>   
 </template>
 
 <script>
@@ -31,6 +31,66 @@ export default {
     components: {
         Header,
         Button,
+    },
+    data(){
+        return{
+            etype:null,
+            key: 0,
+            text: "",
+            ans: "",
+            cipherText: "",
+            plainText: "",
+        }
+    },
+    methods: {
+        clearContent(){
+            this.text = "";
+            this.key = 0;
+            this.ans = "";  
+        },
+        encryptText(){
+            this.cipherText = "";
+            var value;
+            for(let i = 0; i < this.plainText.length; i++) {
+                value = this.plainText.charAt(i).charCodeAt() + this.key;
+                if (value > 90) {
+                    value = 64+(value-90);
+                }
+                this.cipherText+= String.fromCharCode (value);
+            }
+		    this.ans = this.cipherText;
+        },
+        decryptText(){
+            this.plainText = "";
+            var value;
+            for(let i = 0; i < this.cipherText.length; i++) {
+                value = this.cipherText.charAt(i).charCodeAt() - this.key;
+
+                if(value < 65) {
+                    value = 91 - (65-value);
+                    console.log(value);
+                }
+                this.plainText+= String.fromCharCode (value);
+            }
+            this.ans = this.plainText;
+        },
+        performAction(){
+            if(this.etype === null){
+                alert("No encryption type was selected for this operation.");
+            }else if(this.text === ""){
+                alert("No information was added for the plainText/cipherText field.");
+            }else if(this.key === ""){
+                alert("No information was added for the key field.");
+            }else{
+                if(this.etype === "encrypt"){
+                    this.plainText = this.text.replace(/\s+/g, '').toUpperCase();
+                    this.encryptText();
+                }else if(this.etype === "decrypt"){
+                    this.cipherText = this.text.replace(/\s+/g, '').toUpperCase();
+                    this.decryptText();
+                }
+            }
+        },
     }
 }
 </script>

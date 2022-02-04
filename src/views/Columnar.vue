@@ -9,19 +9,17 @@
     <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
     <label for="decrypt">Decrypt</label>
 
-    <label for="text">plainText/cipherText</label>
+    <label for="text">PlainText/CipherText</label>
     <input type="text" name="text" id="text" v-model.trim="text">
 
     <label for="key">Key</label>
     <input type="text" name="key" id="key" v-model.trim="key">
 
-    <!-- <Button label="<-Back"/> -->
-
     <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
 
-    <Button @click="performAction" label="Go"/>
+    <Button @click="performAction" color="green" label="Go"/>
 
-    <Button @click="clearContent" label="Redo"/>    
+    <Button @click="clearContent" color="red" label="Redo"/>   
 </template>
 
 <script>

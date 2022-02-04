@@ -26,9 +26,9 @@
 
     <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
 
-    <Button @click="performAction" label="Go"/>
+    <Button @click="performAction" color="green" label="Go"/>
 
-    <Button @click="clearContent" label="Redo"/>    
+    <Button @click="clearContent" color="red" label="Redo"/>    
 </template>
 
 <script>
