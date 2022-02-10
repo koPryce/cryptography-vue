@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 import Columnar from '../views/Columnar.vue'
 import Monoalphabetic from '../views/Monoalphabetic.vue'
 import Polyalphabetic from '../views/Polyalphabetic.vue'
@@ -8,11 +8,11 @@ import Vernam from '../views/Vernam.vue'
 import Vigenere from '../views/Vigenere.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
+  // {
+  //   path: '/',
+  //   name: 'Home',
+  //   component: Home
+  // },
   {
     path: '/columnar',
     name: 'Columnar',

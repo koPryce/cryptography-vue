@@ -6,7 +6,8 @@
   <router-view/> -->
   <div class="container">
     <!-- <RSA/> -->
-    <Monoalphabetic/>
+    <!-- <Monoalphabetic/> -->
+    <Vernam/>
     <Footer/>
 
   </div>
