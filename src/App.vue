@@ -4,13 +4,21 @@
     <router-link to="/about">About</router-link>
   </div>
   <router-view/> -->
-  <div class="container">
-    <!-- <RSA/> -->
-    <!-- <Monoalphabetic/> -->
-    <Vernam/>
+  <nav>
+    <ul>
+      <li><router-link to="/columnar">Columnar</router-link></li>
+      <li><router-link to="/monoalphabetic">Monoalphabetic</router-link></li>
+      <li><router-link to="/polyalphabetic">Polyalphabetic</router-link></li>
+      <li><router-link to="/rsa">RSA</router-link></li>
+      <li><router-link to="/vernam">Vernam</router-link></li> 
+      <li><router-link to="/vigenere">Vigenere</router-link></li>
+    </ul>
+  </nav>
+  <section class="container">
+    <router-view></router-view>
     <Footer/>
 
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-// import Home from '../views/Home.vue'
 import Columnar from '../views/Columnar.vue'
 import Monoalphabetic from '../views/Monoalphabetic.vue'
 import Polyalphabetic from '../views/Polyalphabetic.vue'

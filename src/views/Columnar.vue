@@ -157,12 +157,7 @@ export default {
 
                 const tempArray = this.key.split("");
                 let key = this.key.charAt(min_idx);
-                const newTempArray = tempArray.map(function(letter){
-                    if(letter === key){
-                        return letter = letter.toLowerCase();
-                    }
-                    return letter;
-                });
+                const newTempArray = tempArray.map(letter => (letter === key) ? letter = letter.toLowerCase(): letter);
 
                 this.key = "";
                 for(let i of newTempArray) {
