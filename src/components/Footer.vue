@@ -14,8 +14,14 @@ p{
     text-transform: capitalize;
     color: white;
     background-color:black;
-    font-size:1.13rem;
+    font-size:1.13em;
     padding: 0.5rem;
+}
+
+@media(width < 25em){
+    p{
+        font-size:.75em;
+    }
 }
 
 </style>

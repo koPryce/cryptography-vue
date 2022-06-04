@@ -7,8 +7,8 @@
             <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
             <label for="encrypt">Encrypt</label>
 
-            <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
-            <label for="decrypt">Decrypt</label>
+            <!-- <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
+            <label for="decrypt">Decrypt</label> -->
         </section>
 
         <section class="text">

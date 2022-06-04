@@ -20,4 +20,10 @@ h1{
     letter-spacing: 0.625rem;
     padding: 0.5rem;
 }
+
+@media(width < 25em){
+    h1{
+        font-size:.75em;
+    }
+}
 </style>

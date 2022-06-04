@@ -79,6 +79,8 @@ export default {
   flex: 0 0 200px;
   width: 100%;
   justify-content:space-around;
+  flex-wrap:wrap;
+  gap: 10px;
 }
 
 .content{
@@ -91,10 +93,11 @@ export default {
 }
 
 .etype, .text, .key{
-        display:flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1rem;
+    display:flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
+    flex-wrap: wrap;
 }
 
 input::-webkit-outer-spin-button,
@@ -107,4 +110,5 @@ input::-webkit-inner-spin-button {
 input[type=number] {
    -moz-appearance: textfield;
 }
+
 </style>
