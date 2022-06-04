@@ -1,7 +1,5 @@
 <template>
     <h1>{{heading}}</h1>
-
-    
 </template>
 
 <script>
@@ -19,7 +17,7 @@ h1{
     background-color:black;
     color:white;
     text-transform: uppercase;
-    letter-spacing: 10px;
-    padding: 8px;
+    letter-spacing: 0.625rem;
+    padding: 0.5rem;
 }
 </style>

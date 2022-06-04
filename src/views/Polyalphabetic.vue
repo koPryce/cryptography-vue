@@ -1,22 +1,27 @@
 <template>
     <Header heading="Polyalphabetic Cipher"/>
 
-    <h3>Encrypt/Decrypt</h3>
+    <section class="etype">
+        <h3>Encrypt/Decrypt</h3>
+        <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
+        <label for="encrypt">Encrypt</label>
+        <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
+        <label for="decrypt">Decrypt</label>
+    </section>
 
-    <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
-    <label for="encrypt">Encrypt</label>
+    <section class="text">
+        <label for="text">Plaintext/Ciphertext</label>
+        <input type="text" name="text" id="text" v-model.trim="text">
+    </section>
 
-    <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
-    <label for="decrypt">Decrypt</label>
+    <section class="answer">
+        <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
+    </section>
 
-    <label for="text">Plaintext/Ciphertext</label>
-    <input type="text" name="text" id="text" v-model.trim="text">
-
-    <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
-
-    <Button @click="performAction" color="green" label="Go"/>
-
-    <Button @click="clearContent" color="red" label="Redo"/>    
+    <section class="btns">
+        <Button @click="performAction" color="#9897A9" label="Go"/>
+        <Button @click="clearContent" color="#232023" label="Redo"/>
+    </section>    
 </template>
 
 <script>
@@ -109,5 +114,5 @@ export default {
 </script>
 
 <style scoped>
-
+    
 </style>

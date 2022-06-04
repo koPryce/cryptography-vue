@@ -1,34 +1,35 @@
 <template>
     <Header heading="RSA"/>
 
-    <h3>Encrypt/Decrypt</h3>
+    <section class="etype">
+        <h3>Encrypt/Decrypt</h3>
+        <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
+        <label for="encrypt">Encrypt</label>
+        <!-- <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
+        <label for="decrypt">Decrypt</label> -->
+    </section>
 
-    <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
-    <label for="encrypt">Encrypt</label>
+    <section class="text">
+        <label for="p">p</label>
+        <input type="number" name="p" id="p" v-model="p">
+        <label for="q">q</label>
+        <input type="number" name="q" id="q" v-model="q">
+        <label for="e">e</label>
+        <input type="number" name="e" id="e" v-model="e">
+        <label for="d">d (if bit given, enter -1)</label>
+        <input type="number" name="d" id="d" v-model="d">
+        <label for="text">Plaintext/Ciphertext</label>
+        <input type="number" name="text" id="text" v-model="text">
+    </section>
 
-    <!-- <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
-    <label for="decrypt">Decrypt</label> -->
+    <section class="answer">
+        <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
+    </section>
 
-    <label for="p">p</label>
-    <input type="number" name="p" id="p" v-model="p">
-
-    <label for="q">q</label>
-    <input type="number" name="q" id="q" v-model="q">
-
-    <label for="e">e</label>
-    <input type="number" name="e" id="e" v-model="e">
-
-    <label for="d">d (if bit given, enter -1)</label>
-    <input type="number" name="d" id="d" v-model="d">
-
-    <label for="text">Plaintext/Ciphertext</label>
-    <input type="number" name="text" id="text" v-model="text">
-
-    <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
-
-    <Button @click="performAction" color="green" label="Go"/>
-
-    <Button @click="clearContent" color="red" label="Redo"/>    
+    <section class="btns">
+        <Button @click="performAction" color="#9897A9" label="Go"/>
+        <Button @click="clearContent" color="#232023" label="Redo"/>
+    </section> 
 </template>
 
 <script>
@@ -120,5 +121,5 @@ export default {
 </script>
 
 <style scoped>
-
+    
 </style>

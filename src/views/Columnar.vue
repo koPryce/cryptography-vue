@@ -1,25 +1,35 @@
 <template>
     <Header heading="Columnar Cipher"/>
+    <section class="container">
+        <section class="etype">
+            <h3>Encrypt/Decrypt</h3>
 
-    <h3>Encrypt/Decrypt</h3>
+            <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
+            <label for="encrypt">Encrypt</label>
 
-    <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
-    <label for="encrypt">Encrypt</label>
+            <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
+            <label for="decrypt">Decrypt</label>
+        </section>
 
-    <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
-    <label for="decrypt">Decrypt</label>
+        <section class="text">
+            <label for="text">PlainText/CipherText</label>
+            <input type="text" name="text" id="text" v-model.trim="text">
+        </section>
 
-    <label for="text">PlainText/CipherText</label>
-    <input type="text" name="text" id="text" v-model.trim="text">
+        <section class="key">
+            <label for="key">Key</label>
+            <input type="text" name="key" id="key" v-model.trim="key">
+        </section>
 
-    <label for="key">Key</label>
-    <input type="text" name="key" id="key" v-model.trim="key">
+        <section class="answer">
+            <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
+        </section>
 
-    <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
-
-    <Button @click="performAction" color="green" label="Go"/>
-
-    <Button @click="clearContent" color="red" label="Redo"/>   
+        <section class="btns">
+            <Button @click="performAction" color="#9897A9" label="Go"/> 
+            <Button @click="clearContent" color="#232023" label="Redo"/> 
+        </section>
+    </section>
 </template>
 
 <script>
@@ -217,5 +227,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

@@ -14,8 +14,8 @@ p{
     text-transform: capitalize;
     color: white;
     background-color:black;
-    font-size:18px;
-    padding: 6px;
+    font-size:1.13rem;
+    padding: 0.5rem;
 }
 
 </style>

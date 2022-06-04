@@ -1,33 +1,37 @@
 <template>
     <Header heading="Vernam Cipher"/>
 
-    <h3>Encrypt/Decrypt</h3>
+    <section class="etype">
+        <h3>Encrypt/Decrypt</h3>
+        <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
+        <label for="encrypt">Encrypt</label>
+        <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
+        <label for="decrypt">Decrypt</label>
+    </section>
 
-    <input type="radio" name="etype" id="encrypt" value="encrypt" v-model="etype">
-    <label for="encrypt">Encrypt</label>
+    <section class="text">
+        <label for="text">Plaintext/Ciphertext</label>
+        <input type="text" name="text" id="text" v-model.trim="text">
+    </section>
 
-    <input type="radio" name="etype" id="decrypt" value="decrypt" v-model="etype">
-    <label for="decrypt">Decrypt</label>
+    <section class="key">
+        <h3>Type of Key</h3>
+        <input type="radio" name="ktype" id="numeric" value="numeric" v-model="ktype">
+        <label for="numeric">Numeric</label>
+        <input type="radio" name="ktype" id="alphabetic" value="alphabetic" v-model="ktype">
+        <label for="alphabetic">Alphabetic</label>
+        <label for="key">Key (if numeric, enter with spaces)</label>
+        <input type="text" name="key" id="key" v-model.trim="key">
+    </section>
 
-    <label for="text">Plaintext/Ciphertext</label>
-    <input type="text" name="text" id="text" v-model.trim="text">
+    <section class="answer">
+        <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
+    </section>
 
-    <h3>Type of Key</h3>
-
-    <input type="radio" name="ktype" id="numeric" value="numeric" v-model="ktype">
-    <label for="numeric">Numeric</label>
-
-    <input type="radio" name="ktype" id="alphabetic" value="alphabetic" v-model="ktype">
-    <label for="alphabetic">Alphabetic</label>
-
-    <label for="key">Key (if numeric, enter with spaces)</label>
-    <input type="text" name="key" id="key" v-model.trim="key">
-
-    <textarea name="answer" id="answer" cols="30" rows="10" v-model="ans" readonly></textarea>
-
-    <Button @click="performAction" color="green" label="Go"/>
-
-    <Button @click="clearContent" color="red" label="Redo"/>   
+    <section class="btns">
+            <Button @click="performAction" color="#9897A9" label="Go"/> 
+            <Button @click="clearContent" color="#232023" label="Redo"/> 
+    </section>   
 </template>
 
 <script>
@@ -165,5 +169,5 @@ export default {
 </script>
 
 <style scoped>
-
+    
 </style>

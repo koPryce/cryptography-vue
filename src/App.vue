@@ -4,7 +4,7 @@
     <router-link to="/about">About</router-link>
   </div>
   <router-view/> -->
-  <nav>
+  <nav id="nav">
     <ul>
       <li><router-link to="/columnar">Columnar</router-link></li>
       <li><router-link to="/monoalphabetic">Monoalphabetic</router-link></li>
@@ -14,10 +14,9 @@
       <li><router-link to="/vigenere">Vigenere</router-link></li>
     </ul>
   </nav>
-  <section class="container">
+  <section class="content">
     <router-view></router-view>
     <Footer/>
-
   </section>
 </template>
 
@@ -44,12 +43,17 @@ export default {
 </script>
 
 <style>
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #000000;
+  margin: 0 auto;
 }
 
 #nav {
@@ -57,11 +61,50 @@ export default {
 }
 
 #nav a {
+  text-decoration: none;
   font-weight: bold;
   color: #2c3e50;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #2cdd26;
+  background:black;
+  border: 10px black solid;
+  border-radius: 15px;
+}
+
+#nav ul{
+  list-style: none;
+  display: flex;
+  flex: 0 0 200px;
+  width: 100%;
+  justify-content:space-around;
+}
+
+.content{
+  margin: 0 1rem;
+  text-align: center;
+}
+
+#answer{
+    resize: none;
+}
+
+.etype, .text, .key{
+        display:flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+   -moz-appearance: textfield;
 }
 </style>

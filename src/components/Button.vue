@@ -14,17 +14,16 @@ export default {
 
 <style scoped>
 button{
-    background-color: black;
-    border: 1px solid black;
     text-transform: uppercase;
-    font-size:23px;
-    padding:.5em;
-    margin: 1em;
+    font-size:1rem;
+    padding: .5rem .75rem;
+    margin: 1rem;
+    color: #FFF;
 }
 
 button:hover{
     cursor: pointer;
-    border: 3px red solid;
+    opacity: .7;
 }
 
 </style>
